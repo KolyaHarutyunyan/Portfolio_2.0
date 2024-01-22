@@ -80,3 +80,15 @@ export const experienceCardMotionWhileInView = {
 export const experienceCardMotionViewport = {
   once: true,
 };
+
+export const skillImageMotionInitial = (directionLeft?: boolean) => ({
+  x: directionLeft ? -200 : 200,
+  opacity: 0,
+});
+export const skillImageMotionTransition = {
+  duration: 1,
+};
+export const skillImageMotionWhileInView = {
+  x: 0,
+  opacity: 1,
+};
