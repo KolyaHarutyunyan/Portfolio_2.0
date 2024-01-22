@@ -1,4 +1,4 @@
-export const socialIconsFgColor = "#332e2d";
+export const socialIconsFgColor = "var(--primary)";
 export const socialIconsBgColor = "transparent";
 
 export const socialIconsMotionInitial = {
@@ -91,4 +91,19 @@ export const skillImageMotionTransition = {
 export const skillImageMotionWhileInView = {
   x: 0,
   opacity: 1,
+};
+
+export const projectImageMotionInitial = {
+  y: -300,
+  opacity: 0,
+};
+export const projectImageMotionTransition = {
+  duration: 1.2,
+};
+export const projectImageMotionWhileInView = {
+  y: 0,
+  opacity: 1,
+};
+export const projectImageMotionViewport = {
+  once: true,
 };

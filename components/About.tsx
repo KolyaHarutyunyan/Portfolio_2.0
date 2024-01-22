@@ -37,13 +37,13 @@ export default function About({}: Props) {
       <div className="px-0 md:px-10">
         <h4 className="text-4xl font-semibold mb-10">
           Here is a{" "}
-          <span className="underline decoration-[#F7AB0A]">little</span>{" "}
+          <span className="underline decoration-secondary">little</span>{" "}
           background
         </h4>
         <div className="space-y-5">
           <p className="text-base">
             Seasoned Software Engineer with{" "}
-            <span className="underline decoration-[#F7AB0A]">
+            <span className="underline decoration-secondary">
               over 5 years of hands-on experience
             </span>{" "}
             in the dynamic realm of software development. I am passionate about
@@ -70,7 +70,7 @@ export default function About({}: Props) {
             Thank you for visiting my portfolio. I look forward to the
             opportunity to collaborate on cutting-edge projects and contribute
             my skills to drive technological advancements.{" "}
-            <span className="underline decoration-[#F7AB0A]">
+            <span className="underline decoration-secondary">
               Let`s build the future together!
             </span>
           </p>
