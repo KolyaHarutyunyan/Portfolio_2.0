@@ -7,13 +7,21 @@ import {
   aboutImageMotionTransition,
   aboutImageMotionViewport,
   aboutImageMotionWhileInView,
+  wrapperMotionInitial,
+  wrapperMotionTransition,
+  wrapperMotionWhileInView,
 } from "@/constants";
 
 type Props = {};
 
 export default function About({}: Props) {
   return (
-    <div className="relative h-screen flex flex-col text-center md:text-left md:flex-row mx-auto items-center justify-evenly max-w-7xl px-10 pt-40">
+    <motion.div
+      initial={wrapperMotionInitial}
+      whileInView={wrapperMotionWhileInView}
+      transition={wrapperMotionTransition}
+      className="relative h-screen flex flex-col text-center md:text-left md:flex-row mx-auto items-center justify-evenly max-w-7xl px-10 pt-40 overflow-scroll"
+    >
       <h3 className="absolute top-24 uppercase tracking-[20px] text-2xl">
         About
       </h3>
@@ -22,7 +30,7 @@ export default function About({}: Props) {
         transition={aboutImageMotionTransition}
         whileInView={aboutImageMotionWhileInView}
         viewport={aboutImageMotionViewport}
-        className="object-cover rounded-full w-56 h-56 md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[600px]"
+        className="object-cover rounded-full w-56 h-56 md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[600px] flex-shrink-0"
         src="https://staff.am/staffmedia/wp-content/uploads/sites/9/2021/09/IT-Hire-1068x713-1.png"
         alt="about"
       />
@@ -68,6 +76,6 @@ export default function About({}: Props) {
           </p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

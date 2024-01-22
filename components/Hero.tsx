@@ -13,11 +13,11 @@ import {
 type Props = {};
 
 export default function Hero({}: Props) {
-  const [text, count] = useTypewriter({
+  const [text] = useTypewriter({
     words: [
       "<ThankYouForVisitingMyPortfolio />",
       "<MyNameIsKolya />",
-      "<Let'sBuildTheFutureTogether! />",
+      "<LetsBuildTheFutureTogether />",
     ],
     loop: true,
     delaySpeed: 3000,

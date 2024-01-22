@@ -41,6 +41,16 @@ export const backgroundCirclesMotionTransition = {
   duration: 2.5,
 };
 
+export const wrapperMotionInitial = {
+  opacity: 0,
+};
+export const wrapperMotionWhileInView = {
+  opacity: 1,
+};
+export const wrapperMotionTransition = {
+  duration: 1.5,
+};
+
 export const aboutImageMotionInitial = {
   x: -200,
   opacity: 0,
@@ -53,5 +63,20 @@ export const aboutImageMotionWhileInView = {
   opacity: 1,
 };
 export const aboutImageMotionViewport = {
+  once: true,
+};
+
+export const experienceCardMotionInitial = {
+  y: -100,
+  opacity: 0,
+};
+export const experienceCardMotionTransition = {
+  duration: 1.2,
+};
+export const experienceCardMotionWhileInView = {
+  y: 0,
+  opacity: 1,
+};
+export const experienceCardMotionViewport = {
   once: true,
 };
