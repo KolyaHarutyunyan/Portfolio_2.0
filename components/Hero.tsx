@@ -8,6 +8,9 @@ import {
   backgroundCirclesMotionAnimate,
   backgroundCirclesMotionInitial,
   backgroundCirclesMotionTransition,
+  wrapperMotionInitial,
+  wrapperMotionTransition,
+  wrapperMotionWhileInView,
 } from "@/constants";
 
 type Props = {};
@@ -24,7 +27,12 @@ export default function Hero({}: Props) {
   });
 
   return (
-    <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center">
+    <motion.div
+      initial={wrapperMotionInitial}
+      whileInView={wrapperMotionWhileInView}
+      transition={wrapperMotionTransition}
+      className="h-screen flex flex-col space-y-8 items-center justify-center text-center"
+    >
       <motion.div
         initial={backgroundCirclesMotionInitial}
         animate={backgroundCirclesMotionAnimate}
@@ -82,6 +90,6 @@ export default function Hero({}: Props) {
           </Link>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

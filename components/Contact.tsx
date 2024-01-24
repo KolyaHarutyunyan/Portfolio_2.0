@@ -1,7 +1,13 @@
 "use client";
 
 import { SubmitHandler, useForm } from "react-hook-form";
+import { motion } from "framer-motion";
 import { EnvelopeIcon, MapPinIcon } from "@heroicons/react/20/solid";
+import {
+  wrapperMotionInitial,
+  wrapperMotionTransition,
+  wrapperMotionWhileInView,
+} from "@/constants";
 
 type Inputs = {
   name: string;
@@ -25,7 +31,12 @@ export default function Contact({}: Props) {
   };
 
   return (
-    <div className="relative h-screen flex flex-col text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center">
+    <motion.div
+      initial={wrapperMotionInitial}
+      whileInView={wrapperMotionWhileInView}
+      transition={wrapperMotionTransition}
+      className="relative h-screen flex flex-col text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center"
+    >
       <h3 className="absolute top-24 uppercase tracking-[20px] text-2xl">
         Contact
       </h3>
@@ -81,6 +92,6 @@ export default function Contact({}: Props) {
           </button>
         </form>
       </div>
-    </div>
+    </motion.div>
   );
 }
