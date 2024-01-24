@@ -8,9 +8,9 @@ import Skills from "@/components/Skills";
 
 export default function Home() {
   return (
-    <main className="h-screen snap-y snap-mandatory overflow-scroll z-0">
+    <main className="h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0">
       <Header />
-      <section id="hero" className="snap-start">
+      <section id="hero" className="snap-center">
         <Hero />
       </section>
       <section id="about" className="snap-center">

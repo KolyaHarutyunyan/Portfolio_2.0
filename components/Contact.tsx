@@ -1,8 +1,29 @@
-import { EnvelopeIcon, MapPinIcon, PhoneIcon } from "@heroicons/react/20/solid";
+"use client";
+
+import { SubmitHandler, useForm } from "react-hook-form";
+import { EnvelopeIcon, MapPinIcon } from "@heroicons/react/20/solid";
+
+type Inputs = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+};
 
 type Props = {};
 
 export default function Contact({}: Props) {
+  const { register, handleSubmit } = useForm<Inputs>();
+
+  const onSubmit: SubmitHandler<Inputs> = ({
+    name,
+    email,
+    subject,
+    message,
+  }) => {
+    window.location.href = `mailto:haryan.geko@gmail.com?subject=${subject}&body=Hi, my name is ${name}. ${message} (${email})`;
+  };
+
   return (
     <div className="relative h-screen flex flex-col text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center">
       <h3 className="absolute top-24 uppercase tracking-[20px] text-2xl">
@@ -23,27 +44,34 @@ export default function Contact({}: Props) {
             <p className="text-2xl">Yerevan, Armenia</p>
           </div>
         </div>
-        <form className="flex flex-col space-y-2 w-fit mx-auto">
+        <form
+          className="flex flex-col space-y-2 w-fit mx-auto"
+          onSubmit={handleSubmit(onSubmit)}
+        >
           <div className="flex space-x-2">
             <input
               className="outline-none bg-[#fef8f0] rounded-sm border-b px-6 py-4 border-secondary text-primary"
               type="text"
               placeholder="Name"
+              {...register("name")}
             />
             <input
               className="outline-none bg-[#fef8f0] rounded-sm border-b px-6 py-4 border-secondary text-primary"
               type="email"
               placeholder="Email"
+              {...register("email")}
             />
           </div>
           <input
             className="outline-none bg-[#fef8f0] rounded-sm border-b px-6 py-4 border-secondary text-primary"
             type="text"
             placeholder="Subject"
+            {...register("subject")}
           />
           <textarea
             className="outline-none bg-[#fef8f0] rounded-sm border-b px-6 py-4 border-secondary text-primary"
             placeholder="Message"
+            {...register("message")}
           />
           <button
             className="bg-secondary py-5 px-10 rounded-md text-black font-bold text-lg"

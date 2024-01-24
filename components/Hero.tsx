@@ -24,12 +24,12 @@ export default function Hero({}: Props) {
   });
 
   return (
-    <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
+    <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center">
       <motion.div
         initial={backgroundCirclesMotionInitial}
         animate={backgroundCirclesMotionAnimate}
         transition={backgroundCirclesMotionTransition}
-        className="relative flex items-center justify-center"
+        className="relative top-24 flex items-center justify-center"
       >
         <div className="absolute border border-primary opacity-20 rounded-full w-[200px] h-[200px] mt-52" />
         <div className="absolute border border-secondary opacity-20 rounded-full w-[300px] h-[300px] mt-52 animate-pulse" />
@@ -37,7 +37,7 @@ export default function Hero({}: Props) {
         <div className="absolute border border-secondary rounded-full opacity-20 w-[650px] h-[650px] mt-52 animate-pulse" />
         <div className="absolute border border-primary opacity-20 rounded-full w-[800px] h-[800px] mt-52" />
       </motion.div>
-      <div className="w-[145px] h-[145px] rounded-full overflow-hidden relative mx-auto">
+      <div className="w-[145px] h-[145px] top-24 rounded-full overflow-hidden relative mx-auto">
         <Image
           className="absolute left-1/2 -translate-x-1/2 object-cover object-center"
           src={"/images/hero.jpeg"}
@@ -46,7 +46,7 @@ export default function Hero({}: Props) {
           height={145}
         />
       </div>
-      <div className="z-10">
+      <div className="z-10 top-24 relative">
         <h2 className="text-sm uppercase tracking-[15px] opacity-60">
           Software Engineer
         </h2>
