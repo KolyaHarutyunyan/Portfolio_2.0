@@ -39,11 +39,12 @@ export default function Hero({}: Props) {
       </motion.div>
       <div className="w-[145px] h-[145px] top-24 rounded-full overflow-hidden relative mx-auto">
         <Image
-          className="absolute left-1/2 -translate-x-1/2 object-cover object-center"
+          className="absolute left-1/2 -translate-x-1/2 object-cover object-center w-[145px] h-[145px]"
           src={"/images/hero.jpeg"}
           alt="hero"
           width={145}
           height={145}
+          priority
         />
       </div>
       <div className="z-10 top-24 relative">

@@ -21,12 +21,12 @@ export default function Projects({}: Props) {
       initial={wrapperMotionInitial}
       whileInView={wrapperMotionWhileInView}
       transition={wrapperMotionTransition}
-      className="relative flex flex-col items-center justify-evenly h-screen mx-auto overflow-hidden text-left md:flex-row z-0 max-w-full"
+      className="relative flex flex-col items-center justify-evenly min-h-screen mx-auto text-left md:flex-row z-0 max-w-full"
     >
       <h3 className="absolute top-24 uppercase tracking-[20px] text-2xl">
         Projects
       </h3>
-      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-10 pt-40">
+      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-10 pt-40 scrollbar scrollbar-track-[#ccc2b3] scrollbar-thumb-[#f6cc89]">
         {projects.map((project, i) => (
           <div
             key={project}
