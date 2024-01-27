@@ -12,8 +12,24 @@ export default defineType({
       type: "string",
     }),
     defineField({
-      name: "image",
-      title: "Image",
+      name: "desktopImage",
+      title: "Desktop Image",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
+      name: "tabletImage",
+      title: "Tablet Image",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
+      name: "mobileImage",
+      title: "Mobile Image",
       type: "image",
       options: {
         hotspot: true,

@@ -19,21 +19,21 @@ type Props = {};
 
 export default function Header({}: Props) {
   return (
-    <header className="sticky top-0 z-20 flex items-center justify-between max-w-7xl mx-auto p-5">
+    <header className="sticky top-0 z-20 flex items-start md:items-center justify-between max-w-7xl mx-auto p-5">
       <motion.div
         initial={socialIconsMotionInitial}
         animate={socialIconsMotionAnimate}
         transition={socialIconsMotionTransition}
-        className="flex items-center"
+        className="flex items-center flex-wrap"
       >
         <SocialIcon
-          url="https://www.facebook.com/profile.php?id=100008459111046"
+          url="https://github.com/KolyaHarutyunyan"
           target="_blank"
           bgColor={socialIconsBgColor}
           fgColor={socialIconsFgColor}
         />
         <SocialIcon
-          url="https://github.com/KolyaHarutyunyan"
+          url="https://gitlab.com/KolyaHarutyunyan"
           target="_blank"
           bgColor={socialIconsBgColor}
           fgColor={socialIconsFgColor}
@@ -52,6 +52,25 @@ export default function Header({}: Props) {
         />
         <SocialIcon
           url="https://www.youtube.com/@fortemix3983"
+          target="_blank"
+          bgColor={socialIconsBgColor}
+          fgColor={socialIconsFgColor}
+        />
+        <SocialIcon
+          url="https://t.me/Kolya_28_09"
+          target="_blank"
+          network="telegram"
+          bgColor={socialIconsBgColor}
+          fgColor={socialIconsFgColor}
+        />
+        <SocialIcon
+          url="https://app.slack.com/client/THDT7CHND/D04BWLERDD2"
+          target="_blank"
+          bgColor={socialIconsBgColor}
+          fgColor={socialIconsFgColor}
+        />
+        <SocialIcon
+          url="https://discord.com/channels/@1042766720579932190"
           target="_blank"
           bgColor={socialIconsBgColor}
           fgColor={socialIconsFgColor}
