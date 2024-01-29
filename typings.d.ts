@@ -20,7 +20,7 @@ export type TSocial = TSanityBody & {
 };
 
 export type TPageInfo =
-  | TSanityBody & {
+  | (TSanityBody & {
       _type: "pageInfo";
       address: string;
       backgroundInformation: string;
@@ -31,7 +31,8 @@ export type TPageInfo =
       phoneNumber: string;
       profilePic: TImage;
       footerPic: TImage;
-    };
+    })
+  | null;
 
 export type TExperience = TSanityBody & {
   _type: "experience";

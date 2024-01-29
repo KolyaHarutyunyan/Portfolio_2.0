@@ -19,11 +19,11 @@ export default function Skill({ skill, directionLeft }: Props) {
         initial={skillImageMotionInitial(directionLeft)}
         transition={skillImageMotionTransition}
         whileInView={skillImageMotionWhileInView}
-        className="rounded-full border border-primary/60 object-cover w-24 h-24 md:w-28 md:h-28 xl:w-32 xl:h-32 filter group-hover:grayscale transition duration-300 ease-in-out flex-shrink-0"
+        className="rounded-full bg-[#fef8f0] object-contain object-center w-24 h-24 md:w-28 md:h-28 xl:w-32 xl:h-32 filter group-hover:grayscale transition duration-300 ease-in-out flex-shrink-0"
         src={urlFor(skill.image).url()}
         alt="skill"
       />
-      <div className="absolute opacity-0 group-hover:opacity-80 transition duration-300 ease-in-out group-hover:bg-[#fef8f0] w-24 h-24 md:w-28 md:h-28 xl:w-32 xl:h-32 rounded-full z-0">
+      <div className="absolute opacity-0 group-hover:opacity-90 transition duration-300 ease-in-out group-hover:bg-[#fef8f0] w-24 h-24 md:w-28 md:h-28 xl:w-32 xl:h-32 rounded-full z-0">
         <div className="flex flex-col justify-center items-center h-full">
           <p className="text-xs text-center font-bold opacity-100 mb-2 md:w-20 xl:w-24 w-16">
             {skill.title}

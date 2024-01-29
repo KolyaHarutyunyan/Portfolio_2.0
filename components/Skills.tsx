@@ -13,11 +13,15 @@ export default function Skills({ skills }: Props) {
         Skills
       </h3>
       <h4 className="absolute top-36 uppercase tracking-[3px] text-sm opacity-60">
-        Hover over a skill to see currency proficiency
+        Hover over a skill to see current proficiency
       </h4>
       <div className="grid grid-cols-6 gap-5">
-        {skills.map((skill) => (
-          <Skill key={skill._id} skill={skill} />
+        {skills.map((skill, i) => (
+          <Skill
+            key={skill._id}
+            skill={skill}
+            directionLeft={i >= skills.length / 2}
+          />
         ))}
       </div>
     </motion.div>

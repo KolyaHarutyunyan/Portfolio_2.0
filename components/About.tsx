@@ -32,7 +32,7 @@ export default function About({ pageInfo }: Props) {
         whileInView={aboutImageMotionWhileInView}
         viewport={aboutImageMotionViewport}
         className="object-cover rounded-full w-56 h-56 md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[600px] flex-shrink-0"
-        src={urlFor(pageInfo.profilePic).url()}
+        src={urlFor(pageInfo?.profilePic).url()}
         alt="about"
       />
       <div className="px-0 md:px-10">
@@ -42,7 +42,7 @@ export default function About({ pageInfo }: Props) {
           background
         </h4>
         <div className="space-y-5">
-          <p className="text-base">{pageInfo.backgroundInformation}</p>
+          <p className="text-base">{pageInfo?.backgroundInformation}</p>
         </div>
       </div>
     </motion.div>

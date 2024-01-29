@@ -21,7 +21,7 @@ export default function Hero({ pageInfo }: Props) {
   const [text] = useTypewriter({
     words: [
       "<ThankYouForVisitingMyPortfolio />",
-      `<MyNameIs${pageInfo.name} />`,
+      `<MyNameIs${pageInfo?.name} />`,
       "<LetsBuildTheFutureTogether />",
     ],
     loop: true,
@@ -50,7 +50,7 @@ export default function Hero({ pageInfo }: Props) {
       <div className="w-[145px] h-[145px] top-24 rounded-full overflow-hidden relative mx-auto">
         <Image
           className="absolute left-1/2 -translate-x-1/2 object-cover object-center w-[145px] h-[145px]"
-          src={urlFor(pageInfo.heroImage).url()}
+          src={urlFor(pageInfo?.heroImage).url()}
           alt="hero"
           width={145}
           height={145}
@@ -59,7 +59,7 @@ export default function Hero({ pageInfo }: Props) {
       </div>
       <div className="z-10 top-24 relative">
         <h2 className="text-sm uppercase tracking-[15px] opacity-60">
-          {pageInfo.role}
+          {pageInfo?.role}
         </h2>
         <h1 className="text-5xl lg:text-6xl font-semibold scroll-px-10">
           <span className="mr-3">{text}</span>
