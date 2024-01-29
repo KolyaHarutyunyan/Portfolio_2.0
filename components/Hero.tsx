@@ -12,6 +12,7 @@ import {
   wrapperMotionTransition,
   wrapperMotionWhileInView,
 } from "@/constants";
+import { urlFor } from "@/sanity";
 import { TPageInfo } from "@/typings";
 
 type Props = { pageInfo: TPageInfo };
@@ -49,8 +50,7 @@ export default function Hero({ pageInfo }: Props) {
       <div className="w-[145px] h-[145px] top-24 rounded-full overflow-hidden relative mx-auto">
         <Image
           className="absolute left-1/2 -translate-x-1/2 object-cover object-center w-[145px] h-[145px]"
-          src={"/images/hero.jpeg"}
-          // src={urlFor(pageInfo.heroImage.asset._ref)}
+          src={urlFor(pageInfo.heroImage).url()}
           alt="hero"
           width={145}
           height={145}

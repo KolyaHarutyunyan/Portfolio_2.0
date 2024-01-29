@@ -10,6 +10,7 @@ import {
   wrapperMotionTransition,
   wrapperMotionWhileInView,
 } from "@/constants";
+import { urlFor } from "@/sanity";
 import { TPageInfo } from "@/typings";
 
 type Props = { pageInfo: TPageInfo };
@@ -31,7 +32,7 @@ export default function About({ pageInfo }: Props) {
         whileInView={aboutImageMotionWhileInView}
         viewport={aboutImageMotionViewport}
         className="object-cover rounded-full w-56 h-56 md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[600px] flex-shrink-0"
-        src="https://staff.am/staffmedia/wp-content/uploads/sites/9/2021/09/IT-Hire-1068x713-1.png"
+        src={urlFor(pageInfo.profilePic).url()}
         alt="about"
       />
       <div className="px-0 md:px-10">

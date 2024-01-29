@@ -5,6 +5,7 @@ import {
   experienceCardMotionViewport,
   experienceCardMotionWhileInView,
 } from "@/constants";
+import { urlFor } from "@/sanity";
 import { TExperience } from "@/typings";
 
 type Props = { experience: TExperience };
@@ -17,8 +18,8 @@ export default function ExperienceCard({ experience }: Props) {
         transition={experienceCardMotionTransition}
         whileInView={experienceCardMotionWhileInView}
         viewport={experienceCardMotionViewport}
-        className="w-32 h-32 rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center"
-        src=""
+        className="w-32 h-32 rounded-full xl:w-[200px] xl:h-[200px] object-contain object-center"
+        src={urlFor(experience.companyImage).url()}
         alt="experience"
       />
       <div className="px-0 md:px-10">

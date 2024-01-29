@@ -30,6 +30,7 @@ export type TPageInfo =
       name: string;
       phoneNumber: string;
       profilePic: TImage;
+      footerPic: TImage;
     };
 
 export type TExperience = TSanityBody & {

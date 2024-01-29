@@ -10,6 +10,7 @@ import {
   wrapperMotionTransition,
   wrapperMotionWhileInView,
 } from "@/constants";
+import { urlFor } from "@/sanity";
 import { TProject } from "@/typings";
 
 type Props = { projects: TProject[] };
@@ -37,7 +38,7 @@ export default function Projects({ projects }: Props) {
               whileInView={projectImageMotionWhileInView}
               viewport={projectImageMotionViewport}
               className="w-80 h-52"
-              src="https://cdn.analyticsvidhya.com/wp-content/uploads/2023/09/data-science-projects.png"
+              src={urlFor(project.desktopImage).url()}
               alt="project"
             />
             <div className="space-y-10 px-0 md:px-10 max-w-6xl">

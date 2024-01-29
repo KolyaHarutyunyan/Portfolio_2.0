@@ -37,6 +37,14 @@ export default defineType({
       },
     }),
     defineField({
+      name: "footerPic",
+      title: "FooterPic",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
       name: "email",
       title: "Email",
       type: "string",
