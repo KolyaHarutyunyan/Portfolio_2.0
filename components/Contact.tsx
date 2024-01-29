@@ -8,6 +8,7 @@ import {
   wrapperMotionTransition,
   wrapperMotionWhileInView,
 } from "@/constants";
+import { TPageInfo } from "@/typings";
 
 type Inputs = {
   name: string;
@@ -16,9 +17,9 @@ type Inputs = {
   message: string;
 };
 
-type Props = {};
+type Props = { pageInfo: TPageInfo };
 
-export default function Contact({}: Props) {
+export default function Contact({ pageInfo }: Props) {
   const { register, handleSubmit } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = ({
@@ -48,11 +49,11 @@ export default function Contact({}: Props) {
         <div className="space-y-10">
           <div className="flex items-center space-x-5 justify-center">
             <EnvelopeIcon className="text-secondary h-7 w-7 animate-pulse" />
-            <p className="text-2xl">haryan.geko@gmail.com</p>
+            <p className="text-2xl">{pageInfo.email}</p>
           </div>
           <div className="flex items-center space-x-5 justify-center">
             <MapPinIcon className="text-secondary h-7 w-7 animate-pulse" />
-            <p className="text-2xl">Yerevan, Armenia</p>
+            <p className="text-2xl">{pageInfo.address}</p>
           </div>
         </div>
         <form

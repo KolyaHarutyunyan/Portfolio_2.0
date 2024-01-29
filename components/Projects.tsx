@@ -10,12 +10,11 @@ import {
   wrapperMotionTransition,
   wrapperMotionWhileInView,
 } from "@/constants";
+import { TProject } from "@/typings";
 
-type Props = {};
+type Props = { projects: TProject[] };
 
-const projects = [1, 2, 3, 4, 5, 6];
-
-export default function Projects({}: Props) {
+export default function Projects({ projects }: Props) {
   return (
     <motion.div
       initial={wrapperMotionInitial}
@@ -27,9 +26,9 @@ export default function Projects({}: Props) {
         Projects
       </h3>
       <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-10 pt-40 scrollbar scrollbar-track-[#ccc2b3] scrollbar-thumb-[#f6cc89]">
-        {projects.map((project, i) => (
+        {projects.map((project) => (
           <div
-            key={project}
+            key={project._id}
             className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen"
           >
             <motion.img
@@ -44,15 +43,12 @@ export default function Projects({}: Props) {
             <div className="space-y-10 px-0 md:px-10 max-w-6xl">
               <h4 className="text-4xl font-semibold text-center">
                 <span className="underline decoration-secondary">
-                  Case study {i + 1} of {projects.length}:
+                  Case study 1 of {projects.length}:
                 </span>{" "}
-                UPS clone
+                {project.title}
               </h4>
               <p className="text-lg text-center md:text-left">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
-                ipsam doloremque illo veniam quod, quibusdam ducimus est magnam
-                reiciendis iste perspiciatis cum recusandae reprehenderit
-                temporibus error autem eum ullam placeat voluptatibus vero?
+                {project.summary}
               </p>
             </div>
           </div>

@@ -12,14 +12,15 @@ import {
   wrapperMotionTransition,
   wrapperMotionWhileInView,
 } from "@/constants";
+import { TPageInfo } from "@/typings";
 
-type Props = {};
+type Props = { pageInfo: TPageInfo };
 
-export default function Hero({}: Props) {
+export default function Hero({ pageInfo }: Props) {
   const [text] = useTypewriter({
     words: [
       "<ThankYouForVisitingMyPortfolio />",
-      "<MyNameIsKolya />",
+      `<MyNameIs${pageInfo.name} />`,
       "<LetsBuildTheFutureTogether />",
     ],
     loop: true,
@@ -49,6 +50,7 @@ export default function Hero({}: Props) {
         <Image
           className="absolute left-1/2 -translate-x-1/2 object-cover object-center w-[145px] h-[145px]"
           src={"/images/hero.jpeg"}
+          // src={urlFor(pageInfo.heroImage.asset._ref)}
           alt="hero"
           width={145}
           height={145}
@@ -57,7 +59,7 @@ export default function Hero({}: Props) {
       </div>
       <div className="z-10 top-24 relative">
         <h2 className="text-sm uppercase tracking-[15px] opacity-60">
-          Software Engineer
+          {pageInfo.role}
         </h2>
         <h1 className="text-5xl lg:text-6xl font-semibold scroll-px-10">
           <span className="mr-3">{text}</span>

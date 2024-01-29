@@ -7,10 +7,11 @@ import {
   wrapperMotionWhileInView,
 } from "@/constants";
 import ExperienceCard from "./ExperienceCard";
+import { TExperience } from "@/typings";
 
-type Props = {};
+type Props = { experiences: TExperience[] };
 
-export default function Experience({}: Props) {
+export default function Experience({ experiences }: Props) {
   return (
     <motion.div
       initial={wrapperMotionInitial}
@@ -22,10 +23,9 @@ export default function Experience({}: Props) {
         Experience
       </h3>
       <div className="w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory scrollbar scrollbar-track-[#ccc2b3] scrollbar-thumb-[#f6cc89]">
-        <ExperienceCard />
-        <ExperienceCard />
-        <ExperienceCard />
-        <ExperienceCard />
+        {experiences.map((experience) => (
+          <ExperienceCard key={experience._id} experience={experience} />
+        ))}
       </div>
     </motion.div>
   );

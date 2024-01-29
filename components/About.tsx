@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   aboutImageMotionInitial,
@@ -11,10 +10,11 @@ import {
   wrapperMotionTransition,
   wrapperMotionWhileInView,
 } from "@/constants";
+import { TPageInfo } from "@/typings";
 
-type Props = {};
+type Props = { pageInfo: TPageInfo };
 
-export default function About({}: Props) {
+export default function About({ pageInfo }: Props) {
   return (
     <motion.div
       initial={wrapperMotionInitial}
@@ -41,39 +41,7 @@ export default function About({}: Props) {
           background
         </h4>
         <div className="space-y-5">
-          <p className="text-base">
-            Seasoned Software Engineer with{" "}
-            <span className="underline decoration-secondary">
-              over 5 years of hands-on experience
-            </span>{" "}
-            in the dynamic realm of software development. I am passionate about
-            crafting robust, scalable, and innovative solutions that not only
-            meet but exceed the ever-evolving demands of the digital landscape
-          </p>
-          <p className="text-base">
-            My expertise extends across the entire software development
-            lifecycle, from conceptualization and design to implementation,
-            testing, and deployment. I thrive in collaborative environments,
-            fostering open communication and teamwork to achieve project
-            milestones efficiently. My ability to translate complex technical
-            concepts into clear, actionable insights enables me to effectively
-            communicate with cross-functional teams, stakeholders, and clients.
-          </p>
-          <p className="text-base">
-            As a Senior Software Engineer, I am committed to pushing the
-            boundaries of what is possible in the world of technology. I am
-            excited about the prospect of tackling new challenges, embracing
-            emerging technologies, and contributing to the success of
-            forward-thinking projects.
-          </p>
-          <p className="text-base">
-            Thank you for visiting my portfolio. I look forward to the
-            opportunity to collaborate on cutting-edge projects and contribute
-            my skills to drive technological advancements.{" "}
-            <span className="underline decoration-secondary">
-              Let`s build the future together!
-            </span>
-          </p>
+          <p className="text-base">{pageInfo.backgroundInformation}</p>
         </div>
       </div>
     </motion.div>

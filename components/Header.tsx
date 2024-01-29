@@ -14,10 +14,11 @@ import {
   socialIconsMotionInitial,
   socialIconsMotionTransition,
 } from "@/constants";
+import { TSocial } from "@/typings";
 
-type Props = {};
+type Props = { socials: TSocial[] };
 
-export default function Header({}: Props) {
+export default function Header({ socials }: Props) {
   return (
     <header className="sticky top-0 z-20 flex items-start md:items-center justify-between max-w-7xl mx-auto p-5">
       <motion.div
@@ -26,55 +27,16 @@ export default function Header({}: Props) {
         transition={socialIconsMotionTransition}
         className="flex items-center flex-wrap"
       >
-        <SocialIcon
-          url="https://github.com/KolyaHarutyunyan"
-          target="_blank"
-          bgColor={socialIconsBgColor}
-          fgColor={socialIconsFgColor}
-        />
-        <SocialIcon
-          url="https://gitlab.com/KolyaHarutyunyan"
-          target="_blank"
-          bgColor={socialIconsBgColor}
-          fgColor={socialIconsFgColor}
-        />
-        <SocialIcon
-          url="https://www.linkedin.com/in/kolya-harutyunyan-3a11a320b/"
-          target="_blank"
-          bgColor={socialIconsBgColor}
-          fgColor={socialIconsFgColor}
-        />
-        <SocialIcon
-          url="https://twitter.com/Kolya80264360"
-          target="_blank"
-          bgColor={socialIconsBgColor}
-          fgColor={socialIconsFgColor}
-        />
-        <SocialIcon
-          url="https://www.youtube.com/@fortemix3983"
-          target="_blank"
-          bgColor={socialIconsBgColor}
-          fgColor={socialIconsFgColor}
-        />
-        <SocialIcon
-          url="https://t.me/Kolya_28_09"
-          target="_blank"
-          network="telegram"
-          bgColor={socialIconsBgColor}
-          fgColor={socialIconsFgColor}
-        />
-        <SocialIcon
-          url="https://app.slack.com/client/THDT7CHND/D04BWLERDD2"
-          target="_blank"
-          bgColor={socialIconsBgColor}
-          fgColor={socialIconsFgColor}
-        />
-        <SocialIcon
-          url="https://discord.com/channels/@1042766720579932190"
-          target="_blank"
-          bgColor={socialIconsBgColor}
-          fgColor={socialIconsFgColor}
-        />
+        {socials.map((social) => (
+          <SocialIcon
+            key={social.title}
+            url={social.url}
+            network={social.title.toLowerCase()}
+            target="_blank"
+            bgColor={socialIconsBgColor}
+            fgColor={socialIconsFgColor}
+          />
+        ))}
       </motion.div>
       <motion.div
         initial={getInTouchMotionInitial}

@@ -6,30 +6,43 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
+import {
+  getExperiences,
+  getPageInfo,
+  getProjects,
+  getSkills,
+  getSocials,
+} from "../api";
 
-export default function Home() {
+export default async function Home() {
+  const socials = await getSocials();
+  const pageInfo = await getPageInfo();
+  const experiences = await getExperiences();
+  const skills = await getSkills();
+  const projects = await getProjects();
+
   return (
     <main className="h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-[#ccc2b3] scrollbar-thumb-[#f6cc89]">
-      <Header />
+      <Header socials={socials} />
       <section id="hero" className="snap-center">
-        <Hero />
+        <Hero pageInfo={pageInfo} />
       </section>
       <section id="about" className="snap-center">
-        <About />
+        <About pageInfo={pageInfo} />
       </section>
       <section id="experience" className="snap-center">
-        <Experience />
+        <Experience experiences={experiences} />
       </section>
       <section id="skills" className="snap-start">
-        <Skills />
+        <Skills skills={skills} />
       </section>
       <section id="projects" className="snap-start">
-        <Projects />
+        <Projects projects={projects} />
       </section>
       <section id="contact" className="snap-start">
-        <Contact />
+        <Contact pageInfo={pageInfo} />
       </section>
-      <Footer />
+      <Footer pageInfo={pageInfo} />
     </main>
   );
 }

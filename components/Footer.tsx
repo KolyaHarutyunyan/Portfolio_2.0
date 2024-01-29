@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
+import { TPageInfo } from "@/typings";
 
-type Props = {};
+type Props = { pageInfo: TPageInfo };
 
-export default function Footer({}: Props) {
+export default function Footer({ pageInfo }: Props) {
   return (
     <footer className="sticky bottom-7 w-full">
       <Link href="#hero">
