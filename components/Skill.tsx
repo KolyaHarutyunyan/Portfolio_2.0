@@ -1,9 +1,10 @@
-import { motion } from "framer-motion";
-import {
-  skillImageMotionInitial,
-  skillImageMotionTransition,
-  skillImageMotionWhileInView,
-} from "@/constants";
+import Image from "next/image";
+// import { motion } from "framer-motion";
+// import {
+//   skillImageMotionInitial,
+//   skillImageMotionTransition,
+//   skillImageMotionWhileInView,
+// } from "@/constants";
 import { urlFor } from "@/sanity";
 import { TSkill } from "@/typings";
 
@@ -15,20 +16,22 @@ type Props = {
 export default function Skill({ skill, directionLeft }: Props) {
   return (
     <div className="group relative flex cursor-default">
-      <motion.img
-        initial={skillImageMotionInitial(directionLeft)}
-        transition={skillImageMotionTransition}
-        whileInView={skillImageMotionWhileInView}
-        className="rounded-full bg-[#fef8f0] object-contain object-center w-24 h-24 md:w-28 md:h-28 xl:w-32 xl:h-32 filter group-hover:grayscale transition duration-300 ease-in-out flex-shrink-0"
+      <Image
+        // initial={skillImageMotionInitial(directionLeft)}
+        // transition={skillImageMotionTransition}
+        // whileInView={skillImageMotionWhileInView}
+        className="rounded-full bg-[#fef8f0] object-contain object-center w-16 h-16 filter group-hover:scale-150 group-hover:grayscale transition duration-300 ease-in-out flex-shrink-0"
         src={urlFor(skill.image).url()}
+        width={64}
+        height={64}
         alt="skill"
       />
-      <div className="absolute opacity-0 group-hover:opacity-90 transition duration-300 ease-in-out group-hover:bg-[#fef8f0] w-24 h-24 md:w-28 md:h-28 xl:w-32 xl:h-32 rounded-full z-0">
+      <div className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 opacity-0 group-hover:opacity-90 transition duration-300 ease-in-out group-hover:bg-[#fef8f0] w-24 h-24 p-1 origin-center rounded-full z-0">
         <div className="flex flex-col justify-center items-center h-full">
-          <p className="text-xs text-center font-bold opacity-100 mb-2 md:w-20 xl:w-24 w-16">
+          <p className="text-xs text-center font-bold opacity-100 mb-2">
             {skill.title}
           </p>
-          <p className="text-3xl font-bold opacity-100">{skill.progress}%</p>
+          <p className="text-2xl font-bold opacity-100">{skill.progress}%</p>
         </div>
       </div>
     </div>

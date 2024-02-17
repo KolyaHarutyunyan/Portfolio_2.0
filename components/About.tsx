@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { urlFor } from "@/sanity";
 import {
   aboutImageMotionInitial,
   aboutImageMotionTransition,
@@ -10,7 +11,6 @@ import {
   wrapperMotionTransition,
   wrapperMotionWhileInView,
 } from "@/constants";
-import { urlFor } from "@/sanity";
 import { TPageInfo } from "@/typings";
 
 type Props = { pageInfo: TPageInfo };
