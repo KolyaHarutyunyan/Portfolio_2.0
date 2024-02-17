@@ -89,6 +89,7 @@ export default function Projects({ projects }: Props) {
         ))}
       </div>
       <div className="absolute top-2/3 -translate-y-2/3 w-full bg-secondary opacity-20 left-0 h-[500px] -skew-y-12" />
+      <div className="absolute top-2/3 -translate-y-2/3 w-full bg-secondary opacity-20 left-0 h-[500px] skew-y-12" />
     </motion.div>
   );
 }
