@@ -22,7 +22,7 @@ export default function Projects({ projects }: Props) {
       initial={wrapperMotionInitial}
       whileInView={wrapperMotionWhileInView}
       transition={wrapperMotionTransition}
-      className="relative flex flex-col items-center justify-evenly min-h-screen mx-auto text-left md:flex-row z-0 max-w-full"
+      className="relative flex flex-col items-center justify-evenly h-screen mx-auto text-left md:flex-row z-0 max-w-full"
     >
       <h3 className="absolute top-24 uppercase tracking-[20px] text-2xl">
         Projects
@@ -33,15 +33,35 @@ export default function Projects({ projects }: Props) {
             key={project._id}
             className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen"
           >
-            <motion.img
-              initial={projectImageMotionInitial}
-              transition={projectImageMotionTransition}
-              whileInView={projectImageMotionWhileInView}
-              viewport={projectImageMotionViewport}
-              className="w-80 h-52"
-              src={urlFor(project.desktopImage).url()}
-              alt="project"
-            />
+            <div className="flex items-end gap-x-2">
+              <motion.img
+                initial={projectImageMotionInitial}
+                transition={projectImageMotionTransition}
+                whileInView={projectImageMotionWhileInView}
+                viewport={projectImageMotionViewport}
+                className="h-48"
+                src={urlFor(project.tabletImage).url()}
+                alt="project"
+              />
+              <motion.img
+                initial={projectImageMotionInitial}
+                transition={projectImageMotionTransition}
+                whileInView={projectImageMotionWhileInView}
+                viewport={projectImageMotionViewport}
+                className="w-80 h-52"
+                src={urlFor(project.desktopImage).url()}
+                alt="project"
+              />
+              <motion.img
+                initial={projectImageMotionInitial}
+                transition={projectImageMotionTransition}
+                whileInView={projectImageMotionWhileInView}
+                viewport={projectImageMotionViewport}
+                className="h-44"
+                src={urlFor(project.mobileImage).url()}
+                alt="project"
+              />
+            </div>
             <div className="space-y-10 px-0 md:px-10 max-w-6xl">
               <h4 className="text-4xl font-semibold text-center">
                 <span className="underline decoration-secondary">
@@ -68,7 +88,7 @@ export default function Projects({ projects }: Props) {
           </div>
         ))}
       </div>
-      <div className="absolute top-[30%] w-full bg-secondary opacity-20 left-0 h-[500px] -skew-y-12" />
+      <div className="absolute top-2/3 -translate-y-2/3 w-full bg-secondary opacity-20 left-0 h-[500px] -skew-y-12" />
     </motion.div>
   );
 }

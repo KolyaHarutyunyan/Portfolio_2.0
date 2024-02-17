@@ -17,7 +17,7 @@ export default function Skills({ skills }: Props) {
       initial={wrapperMotionInitial}
       whileInView={wrapperMotionWhileInView}
       transition={wrapperMotionTransition}
-      className="relative min-h-screen flex flex-col text-center md:text-left xl:flex-row max-w-7xl xl:px-10 justify-center xl:space-y-0 mx-auto items-center pt-40"
+      className="relative h-screen flex flex-col text-center md:text-left xl:flex-row max-w-7xl xl:px-10 justify-center xl:space-y-0 mx-auto items-center pt-40"
     >
       <h3 className="absolute top-24 uppercase tracking-[20px] text-2xl">
         Skills
