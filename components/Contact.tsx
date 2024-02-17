@@ -4,6 +4,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { motion } from "framer-motion";
 import { EnvelopeIcon, MapPinIcon } from "@heroicons/react/20/solid";
 import {
+  contactInputClassName,
   wrapperMotionInitial,
   wrapperMotionTransition,
   wrapperMotionWhileInView,
@@ -41,19 +42,23 @@ export default function Contact({ pageInfo }: Props) {
       <h3 className="absolute top-24 uppercase tracking-[20px] text-2xl">
         Contact
       </h3>
-      <div className="flex flex-col space-y-10">
-        <h4 className="text-4xl font-semibold text-center">
+      <div className="flex flex-col items-center space-y-10 pt-24">
+        <h4 className="text-4xl font-medium text-center">
           I have got just what you need.{" "}
           <span className="underline decoration-secondary">Lets talk.</span>
         </h4>
-        <div className="space-y-10">
-          <div className="flex items-center space-x-5 justify-center">
+        <div className="space-y-3">
+          <div className="flex items-center space-x-3 justify-left">
             <EnvelopeIcon className="text-secondary h-7 w-7 animate-pulse" />
-            <p className="text-2xl">{pageInfo?.email}</p>
+            <p className="text-xl opacity-60 font-extralight">
+              {pageInfo?.email}
+            </p>
           </div>
-          <div className="flex items-center space-x-5 justify-center">
+          <div className="flex items-center space-x-3 justify-left">
             <MapPinIcon className="text-secondary h-7 w-7 animate-pulse" />
-            <p className="text-2xl">{pageInfo?.address}</p>
+            <p className="text-xl opacity-60 font-extralight">
+              {pageInfo?.address}
+            </p>
           </div>
         </div>
         <form
@@ -62,26 +67,26 @@ export default function Contact({ pageInfo }: Props) {
         >
           <div className="flex space-x-2">
             <input
-              className="outline-none bg-[#fef8f0] rounded-sm border-b px-6 py-4 border-secondary text-primary"
+              className={contactInputClassName}
               type="text"
               placeholder="Name"
               {...register("name")}
             />
             <input
-              className="outline-none bg-[#fef8f0] rounded-sm border-b px-6 py-4 border-secondary text-primary"
+              className={contactInputClassName}
               type="email"
               placeholder="Email"
               {...register("email")}
             />
           </div>
           <input
-            className="outline-none bg-[#fef8f0] rounded-sm border-b px-6 py-4 border-secondary text-primary"
+            className={contactInputClassName}
             type="text"
             placeholder="Subject"
             {...register("subject")}
           />
           <textarea
-            className="outline-none bg-[#fef8f0] rounded-sm border-b px-6 py-4 border-secondary text-primary"
+            className={contactInputClassName}
             placeholder="Message"
             {...register("message")}
           />

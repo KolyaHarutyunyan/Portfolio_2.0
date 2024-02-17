@@ -22,7 +22,7 @@ export default function Projects({ projects }: Props) {
       initial={wrapperMotionInitial}
       whileInView={wrapperMotionWhileInView}
       transition={wrapperMotionTransition}
-      className="relative flex flex-col items-center justify-evenly h-screen mx-auto text-left md:flex-row z-0 max-w-full"
+      className="relative flex flex-col items-center justify-evenly h-screen mx-auto text-left md:flex-row z-0 max-w-[1240px]"
     >
       <h3 className="absolute top-24 uppercase tracking-[20px] text-2xl">
         Projects
@@ -31,7 +31,7 @@ export default function Projects({ projects }: Props) {
         {projects.map((project, i) => (
           <div
             key={project._id}
-            className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen"
+            className="flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center w-full"
           >
             <div className="flex items-end gap-x-2">
               <motion.img
@@ -62,14 +62,14 @@ export default function Projects({ projects }: Props) {
                 alt="project"
               />
             </div>
-            <div className="space-y-10 px-0 md:px-10 max-w-6xl">
-              <h4 className="text-4xl font-semibold text-center">
+            <div className="space-y-5 px-0 md:px-10 max-w-6xl">
+              <h4 className="text-4xl font-medium text-center">
                 <span className="underline decoration-secondary">
                   Case study {i + 1} of {projects.length}:
                 </span>{" "}
                 {project.title}
               </h4>
-              <div className="flex items-center gap-3 flex-wrap justify-center w-1/2 mx-auto">
+              <div className="flex items-center gap-2 flex-wrap justify-center w-2/3 mx-auto">
                 {project.technologies.map((technology) => (
                   <Image
                     key={technology._id}
@@ -81,7 +81,7 @@ export default function Projects({ projects }: Props) {
                   />
                 ))}
               </div>
-              <p className="text-lg text-center md:text-left">
+              <p className="text-sm text-center max-w-2xl mx-auto">
                 {project.summary}
               </p>
             </div>

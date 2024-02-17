@@ -36,7 +36,7 @@ export default function About({ pageInfo }: Props) {
         alt="about"
       />
       <div className="px-0 md:px-10">
-        <h4 className="text-4xl font-semibold mb-10">
+        <h4 className="text-4xl font-medium mb-10">
           Here is a{" "}
           <span className="underline decoration-secondary">little</span>{" "}
           background
