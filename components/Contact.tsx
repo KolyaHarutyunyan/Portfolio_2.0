@@ -86,7 +86,7 @@ export default function Contact({ pageInfo }: Props) {
             {...register("message")}
           />
           <button
-            className="bg-secondary py-5 px-10 rounded-md text-black font-bold text-lg"
+            className="bg-secondary py-5 px-10 rounded-md text-[#fef8f0] font-bold text-lg"
             type="submit"
           >
             Submit

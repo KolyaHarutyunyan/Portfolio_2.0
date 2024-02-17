@@ -35,6 +35,7 @@ export default function Header({ socials }: Props) {
             target="_blank"
             bgColor={socialIconsBgColor}
             fgColor={socialIconsFgColor}
+            className="hover:bg-[#fef8f0] rounded-full bg-opacity-50 mr-1"
           />
         ))}
       </motion.div>
