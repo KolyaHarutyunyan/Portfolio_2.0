@@ -58,35 +58,35 @@ export default function Hero({ pageInfo }: Props) {
         />
       </div>
       <div className="z-10 top-24 relative">
-        <h2 className="text-sm uppercase tracking-[15px] opacity-60">
+        <h2 className="sm:text-sm text-xs uppercase tracking-[8px] sm:tracking-[15px] opacity-60">
           {pageInfo?.role}
         </h2>
-        <h1 className="text-4xl mt-2 font-medium scroll-px-10">
+        <h1 className="md:text-4xl sm:text-3xl text-xl mt-2 font-medium scroll-px-10">
           <span className="mr-3">{text}</span>
           <Cursor cursorColor="var(--secondary)" />
         </h1>
         <div className="pt-5">
           <Link
             href="#about"
-            className="px-6 py-2 border rounded-full uppercase text-xs tracking-widest transition-all opacity-60 hover:text-secondary hover:border-secondary"
+            className="sm:px-6 px-3 py-2 border rounded-full uppercase text-xs tracking-widest transition-all opacity-60 hover:text-secondary hover:border-secondary"
           >
             About
           </Link>
           <Link
             href="#experience"
-            className="px-6 py-2 border rounded-full uppercase text-xs tracking-widest transition-all opacity-60 hover:text-secondary hover:border-secondary"
+            className="sm:px-6 px-3 py-2 border rounded-full uppercase text-xs tracking-widest transition-all opacity-60 hover:text-secondary hover:border-secondary"
           >
             Experience
           </Link>
           <Link
             href="#skills"
-            className="px-6 py-2 border rounded-full uppercase text-xs tracking-widest transition-all opacity-60 hover:text-secondary hover:border-secondary"
+            className="sm:px-6 px-3 py-2 border rounded-full uppercase text-xs tracking-widest transition-all opacity-60 hover:text-secondary hover:border-secondary"
           >
             Skills
           </Link>
           <Link
             href="#projects"
-            className="px-6 py-2 border rounded-full uppercase text-xs tracking-widest transition-all opacity-60 hover:text-secondary hover:border-secondary"
+            className="sm:px-6 px-3 py-2 border rounded-full uppercase text-xs tracking-widest transition-all opacity-60 hover:text-secondary hover:border-secondary"
           >
             Projects
           </Link>
