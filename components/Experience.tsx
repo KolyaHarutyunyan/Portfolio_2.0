@@ -17,9 +17,9 @@ export default function Experience({ experiences }: Props) {
       initial={wrapperMotionInitial}
       whileInView={wrapperMotionWhileInView}
       transition={wrapperMotionTransition}
-      className="relative h-screen flex flex-col md:flex-row max-w-7xl px-5 justify-evenly mx-auto text-left overflow-hidden items-center pt-40"
+      className="relative h-screen flex flex-col md:flex-row max-w-7xl px-2 sm:px-4 justify-evenly mx-auto text-left overflow-hidden items-center pt-40"
     >
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-2xl">
+      <h3 className="absolute top-24 uppercase tracking-[10px] md:tracking-[20px] md:text-2xl text-xl">
         Experience
       </h3>
       <div className="w-full flex space-x-5 overflow-x-scroll snap-x snap-mandatory scrollbar scrollbar-track-[#ccc2b3] scrollbar-thumb-[#f6cc89]">
