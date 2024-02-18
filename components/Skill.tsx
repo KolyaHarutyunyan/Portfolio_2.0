@@ -1,10 +1,4 @@
 import Image from "next/image";
-// import { motion } from "framer-motion";
-// import {
-//   skillImageMotionInitial,
-//   skillImageMotionTransition,
-//   skillImageMotionWhileInView,
-// } from "@/constants";
 import { urlFor } from "@/sanity";
 import { TSkill } from "@/typings";
 
@@ -17,9 +11,6 @@ export default function Skill({ skill, directionLeft }: Props) {
   return (
     <div className="group relative flex cursor-default">
       <Image
-        // initial={skillImageMotionInitial(directionLeft)}
-        // transition={skillImageMotionTransition}
-        // whileInView={skillImageMotionWhileInView}
         className="rounded-full bg-[#fef8f0] object-contain object-center w-16 h-16 filter group-hover:scale-150 group-hover:grayscale transition duration-300 ease-in-out flex-shrink-0"
         src={urlFor(skill.image).url()}
         width={64}
