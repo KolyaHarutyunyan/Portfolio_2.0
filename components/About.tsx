@@ -23,7 +23,7 @@ export default function About({ pageInfo }: Props) {
       transition={wrapperMotionTransition}
       className="relative min-h-screen flex flex-col text-center lg:text-left lg:flex-row mx-auto items-center justify-evenly max-w-7xl px-10 pt-40 overflow-scroll"
     >
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-2xl">
+      <h3 className="absolute top-24 uppercase tracking-[10px] md:tracking-[20px] md:text-2xl text-xl">
         About
       </h3>
       <motion.img
@@ -36,13 +36,15 @@ export default function About({ pageInfo }: Props) {
         alt="about"
       />
       <div className="px-0 md:px-10">
-        <h4 className="text-4xl font-medium mb-10 mt-10 lg:mt-0">
+        <h4 className="md:text-4xl text-2xl font-medium md:my-10 my-5 lg:mt-0">
           Here is a{" "}
           <span className="underline decoration-secondary">little</span>{" "}
           background
         </h4>
         <div className="space-y-5">
-          <p className="text-base">{pageInfo?.backgroundInformation}</p>
+          <p className="md:text-base text-sm">
+            {pageInfo?.backgroundInformation}
+          </p>
         </div>
       </div>
     </motion.div>

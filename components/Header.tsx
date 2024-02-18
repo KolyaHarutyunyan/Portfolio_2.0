@@ -20,7 +20,7 @@ type Props = { socials: TSocial[] };
 
 export default function Header({ socials }: Props) {
   return (
-    <header className="sticky top-0 z-20 flex items-start justify-between max-w-7xl mx-auto px-0 sm:px-5 py-5">
+    <header className="sticky top-0 z-20 flex items-start justify-between max-w-7xl mx-auto p-0 sm:p-2">
       <motion.div
         initial={socialIconsMotionInitial}
         animate={socialIconsMotionAnimate}
@@ -44,16 +44,11 @@ export default function Header({ socials }: Props) {
         animate={getInTouchMotionAnimate}
         transition={getInTouchMotionTransition}
       >
-        <Link
-          href="#contact"
-          className="flex items-center animate-pulse mt-[2px]"
-        >
-          <div className="rounded-full sm:w-12 sm:h-12 h-8 w-8 flex items-center justify-center">
-            <EnvelopeIcon className="sm:h-6 sm:w-6 w-5 h-5" />
+        <Link href="#contact" className="flex items-center mt-[2px]">
+          <div className="rounded-full sm:w-10 sm:h-10 h-8 w-8 flex items-center justify-center">
+            <EnvelopeIcon className="w-5 h-5" />
           </div>
-          <p className="hidden md:inline-flex text-sm uppercase">
-            Get in touch
-          </p>
+          <p className="hidden md:inline-flex text-sm">Get in touch</p>
         </Link>
       </motion.div>
     </header>
