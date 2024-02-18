@@ -21,7 +21,7 @@ export default function About({ pageInfo }: Props) {
       initial={wrapperMotionInitial}
       whileInView={wrapperMotionWhileInView}
       transition={wrapperMotionTransition}
-      className="relative h-screen flex flex-col text-center md:text-left md:flex-row mx-auto items-center justify-evenly max-w-7xl px-10 pt-40 overflow-scroll"
+      className="relative min-h-screen flex flex-col text-center lg:text-left lg:flex-row mx-auto items-center justify-evenly max-w-7xl px-10 pt-40 overflow-scroll"
     >
       <h3 className="absolute top-24 uppercase tracking-[20px] text-2xl">
         About
@@ -31,12 +31,12 @@ export default function About({ pageInfo }: Props) {
         transition={aboutImageMotionTransition}
         whileInView={aboutImageMotionWhileInView}
         viewport={aboutImageMotionViewport}
-        className="object-cover rounded-full w-56 h-56 md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[600px] flex-shrink-0"
+        className="object-cover rounded-full w-56 h-56 lg:rounded-lg lg:w-72 lg:h-[400px] xl:w-[500px] xl:h-[600px] flex-shrink-0"
         src={urlFor(pageInfo?.profilePic).url()}
         alt="about"
       />
       <div className="px-0 md:px-10">
-        <h4 className="text-4xl font-medium mb-10">
+        <h4 className="text-4xl font-medium mb-10 mt-10 lg:mt-0">
           Here is a{" "}
           <span className="underline decoration-secondary">little</span>{" "}
           background

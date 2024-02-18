@@ -20,12 +20,12 @@ type Props = { socials: TSocial[] };
 
 export default function Header({ socials }: Props) {
   return (
-    <header className="sticky top-0 z-20 flex items-start md:items-center justify-between max-w-7xl mx-auto p-5">
+    <header className="sticky top-0 z-20 flex items-start justify-between max-w-7xl mx-auto px-0 sm:px-5 py-5">
       <motion.div
         initial={socialIconsMotionInitial}
         animate={socialIconsMotionAnimate}
         transition={socialIconsMotionTransition}
-        className="flex items-center flex-wrap"
+        className="flex items-center"
       >
         {socials.map((social) => (
           <SocialIcon
@@ -35,7 +35,7 @@ export default function Header({ socials }: Props) {
             target="_blank"
             bgColor={socialIconsBgColor}
             fgColor={socialIconsFgColor}
-            className="hover:bg-[#fef8f0] rounded-full bg-opacity-50 mr-1"
+            className="hover:bg-[#fef8f0] rounded-full bg-opacity-50 mr-1 h-[34px!important] w-[34px!important] sm:h-[40px!important] sm:w-[40px!important]"
           />
         ))}
       </motion.div>
@@ -44,9 +44,12 @@ export default function Header({ socials }: Props) {
         animate={getInTouchMotionAnimate}
         transition={getInTouchMotionTransition}
       >
-        <Link href="#contact" className="flex items-center animate-pulse">
-          <div className="rounded-full w-[50px] h-[50px] flex items-center justify-center">
-            <EnvelopeIcon className="h-6 w-6" />
+        <Link
+          href="#contact"
+          className="flex items-center animate-pulse mt-[2px]"
+        >
+          <div className="rounded-full sm:w-12 sm:h-12 h-8 w-8 flex items-center justify-center">
+            <EnvelopeIcon className="sm:h-6 sm:w-6 w-5 h-5" />
           </div>
           <p className="hidden md:inline-flex text-sm uppercase">
             Get in touch
