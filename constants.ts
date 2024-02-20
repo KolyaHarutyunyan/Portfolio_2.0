@@ -107,6 +107,3 @@ export const projectImageMotionWhileInView = {
 export const projectImageMotionViewport = {
   once: true,
 };
-
-export const contactInputClassName =
-  "outline-none bg-[#fef8f0] focus:opacity-100 transition-opacity opacity-70 rounded-sm border-b px-6 py-4 border-secondary text-primary";
