@@ -31,7 +31,7 @@ export default function About({ pageInfo }: Props) {
         transition={aboutImageMotionTransition}
         whileInView={aboutImageMotionWhileInView}
         viewport={aboutImageMotionViewport}
-        className="object-cover rounded-full w-56 h-56 lg:rounded-lg lg:w-72 lg:h-[400px] xl:w-[500px] xl:h-[600px] flex-shrink-0"
+        className="object-contain rounded-full w-56 h-56 bg-[#fec466] lg:rounded-lg lg:w-72 lg:h-[400px] xl:w-[500px] xl:h-[600px] flex-shrink-0"
         src={urlFor(pageInfo?.profilePic).url()}
         alt="about"
       />
