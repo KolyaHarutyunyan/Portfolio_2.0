@@ -42,9 +42,9 @@ export default function Hero({ pageInfo }: Props) {
         className="relative top-24 flex items-center justify-center"
       >
         <div className="absolute border border-primary opacity-20 rounded-full w-[200px] h-[200px] mt-52" />
-        <div className="absolute border border-secondary opacity-20 rounded-full w-[300px] h-[300px] mt-52 animate-pulse" />
+        <div className="absolute border border-secondary opacity-60 rounded-full w-[300px] h-[300px] mt-52" />
         <div className="absolute border border-primary opacity-20 rounded-full w-[500px] h-[500px] mt-52" />
-        <div className="absolute border border-secondary rounded-full opacity-20 w-[650px] h-[650px] mt-52 animate-pulse" />
+        <div className="absolute border border-secondary rounded-full opacity-60 w-[650px] h-[650px] mt-52" />
         <div className="absolute border border-primary opacity-20 rounded-full w-[800px] h-[800px] mt-52" />
       </motion.div>
       <div className="w-36 h-36 top-24 rounded-full overflow-hidden relative mx-auto">

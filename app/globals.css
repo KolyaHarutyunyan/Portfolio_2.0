@@ -30,7 +30,7 @@ body {
   }
 
   .custom-scrollbar::-webkit-scrollbar-thumb {
-    @apply bg-[#f6cc89] rounded-md;
+    @apply bg-[#fec466] rounded-md;
   }
 }
 

@@ -18,8 +18,8 @@ export default function Skill({ skill, directionLeft }: Props) {
         alt="skill"
       />
       <div className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 opacity-0 group-hover:opacity-90 transition duration-300 ease-in-out group-hover:bg-[#fef8f0] w-24 h-24 p-1 origin-center rounded-full z-0">
-        <div className="flex flex-col justify-center items-center h-full">
-          <p className="text-xs text-center font-bold opacity-100 mb-2">
+        <div className="flex flex-col justify-evenly items-center h-full gap-1">
+          <p className="text-xs text-center font-bold opacity-100 w-[80%]">
             {skill.title}
           </p>
           <p className="text-2xl font-bold opacity-100">{skill.progress}%</p>
