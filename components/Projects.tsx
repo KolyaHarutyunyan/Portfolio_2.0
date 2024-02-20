@@ -27,7 +27,7 @@ export default function Projects({ projects }: Props) {
       <h3 className="absolute top-24 uppercase tracking-[10px] md:tracking-[20px] md:text-2xl text-xl">
         Projects
       </h3>
-      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-10 pt-40 scrollbar scrollbar-track-[#ccc2b3] scrollbar-thumb-[#f6cc89]">
+      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-10 pt-40 custom-scrollbar">
         {projects.map((project, i) => (
           <div
             key={project._id}
@@ -88,8 +88,8 @@ export default function Projects({ projects }: Props) {
           </div>
         ))}
       </div>
-      <div className="absolute top-2/3 -translate-y-2/3 w-full bg-secondary opacity-20 left-0 h-[500px] -skew-y-12" />
-      <div className="absolute top-2/3 -translate-y-2/3 w-full bg-secondary opacity-20 left-0 h-[500px] skew-y-12" />
+      <div className="absolute top-1/2 -translate-y-1/2 w-full bg-secondary opacity-20 left-0 h-[500px] -skew-y-12" />
+      <div className="absolute top-1/2 -translate-y-1/2 w-full bg-secondary opacity-20 left-0 h-[500px] skew-y-12" />
     </motion.div>
   );
 }

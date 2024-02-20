@@ -20,6 +20,20 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+@layer base {
+  .custom-scrollbar::-webkit-scrollbar {
+    @apply w-[6px] h-2;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-[#ccc2b3] rounded-md;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-[#f6cc89] rounded-md;
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
