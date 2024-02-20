@@ -18,6 +18,7 @@ export default function Footer({ pageInfo }: Props) {
           alt="footer-hero"
           width={48}
           height={48}
+          priority
         />
       </Link>
     </footer>

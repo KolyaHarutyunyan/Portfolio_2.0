@@ -57,6 +57,7 @@ export type TSkill = TSanityBody & {
 export type TProject = TSanityBody & {
   _type: "project";
   title: string;
+  url: string;
   desktopImage: TImage;
   tabletImage: TImage;
   mobileImage: TImage;

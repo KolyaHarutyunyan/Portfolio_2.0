@@ -22,7 +22,7 @@ export default function Skills({ skills }: Props) {
       <h3 className="absolute top-24 uppercase tracking-[10px] md:tracking-[20px] md:text-2xl text-xl">
         Skills
       </h3>
-      <h4 className="absolute top-36 uppercase tracking-[3px] sm:text-sm text-xs opacity-60">
+      <h4 className="absolute top-36 tracking-[3px] sm:text-sm text-xs opacity-60">
         Hover over a skill to see current proficiency
       </h4>
       <div className="flex flex-wrap items-center justify-evenly md:p-10 p-7 ms:gap-5 gap-3">

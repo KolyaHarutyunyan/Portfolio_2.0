@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import {
@@ -13,6 +14,7 @@ import {
 } from "@/constants";
 import { urlFor } from "@/sanity";
 import { TProject } from "@/typings";
+import { ArrowTopRightOnSquareIcon } from "@heroicons/react/20/solid";
 
 type Props = { projects: TProject[] };
 
@@ -22,7 +24,7 @@ export default function Projects({ projects }: Props) {
       initial={wrapperMotionInitial}
       whileInView={wrapperMotionWhileInView}
       transition={wrapperMotionTransition}
-      className="relative flex flex-col items-center justify-evenly h-screen mx-auto text-left md:flex-row z-0 max-w-[1240px]"
+      className="relative flex flex-col items-center justify-evenly h-screen mx-auto text-left md:flex-row z-0 max-w-[1240px] cursor-default"
     >
       <h3 className="absolute top-24 uppercase tracking-[10px] md:tracking-[20px] md:text-2xl text-xl">
         Projects
@@ -31,7 +33,7 @@ export default function Projects({ projects }: Props) {
         {projects.map((project, i) => (
           <div
             key={project._id}
-            className="flex-shrink-0 snap-center flex flex-col md:space-y-5 space-y-3 items-center justify-start w-full"
+            className="relative flex-shrink-0 snap-center flex flex-col md:space-y-5 space-y-3 items-center justify-start w-full"
           >
             <div className="flex items-end gap-x-2">
               <motion.img
@@ -63,12 +65,20 @@ export default function Projects({ projects }: Props) {
               />
             </div>
             <div className="md:space-y-5 space-y-3 px-0 md:px-10 max-w-6xl">
-              <h4 className="md:text-4xl text-lg font-medium text-center">
-                <span className="underline decoration-secondary">
+              <div className="flex w-max items-center md:gap-x-2.5 gap-x-1 mx-auto md:text-4xl text-lg font-medium text-center">
+                <h4 className="">
                   Case study {i + 1} of {projects.length}:
-                </span>{" "}
-                {project.title}
-              </h4>
+                </h4>{" "}
+                <Link
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative underline decoration-secondary"
+                >
+                  {project.title}
+                  <ArrowTopRightOnSquareIcon className="absolute top-1 opacity-0 group-hover:opacity-100 -right-1 translate-x-full md:w-5 md:h-5 w-3 h-3 text-primary" />
+                </Link>
+              </div>
               <div className="flex items-center gap-2 flex-wrap justify-center w-2/3 mx-auto">
                 {project.technologies.map((technology) => (
                   <Image

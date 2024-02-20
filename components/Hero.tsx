@@ -58,7 +58,7 @@ export default function Hero({ pageInfo }: Props) {
         />
       </div>
       <div className="z-10 top-24 relative">
-        <h2 className="sm:text-sm text-xs uppercase tracking-[8px] sm:tracking-[15px] opacity-60">
+        <h2 className="sm:text-sm text-xs tracking-widest opacity-60">
           {pageInfo?.role}
         </h2>
         <h1 className="md:text-4xl sm:text-3xl text-xl mt-2 font-medium scroll-px-10">
