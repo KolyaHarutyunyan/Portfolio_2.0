@@ -35,14 +35,14 @@ export default function Projects({ projects }: Props) {
             key={project._id}
             className="relative flex-shrink-0 snap-center flex flex-col md:space-y-5 space-y-3 items-center justify-start w-full"
           >
-            <div className="flex items-end gap-x-2">
+            <div className="relative flex items-end gap-x-2">
               <motion.img
                 initial={projectImageMotionInitial}
                 transition={projectImageMotionTransition}
                 whileInView={projectImageMotionWhileInView}
                 viewport={projectImageMotionViewport}
-                className="md:max-w-none max-w-11 md:h-48 h-24"
-                src={urlFor(project.tabletImage).url()}
+                className="absolute md:-left-5 -left-3 z-20 -bottom-3 rounded-lg border-2 border-primary md:h-32 h-16"
+                src={urlFor(project.mobileImage).url()}
                 alt="project"
               />
               <motion.img
@@ -50,7 +50,7 @@ export default function Projects({ projects }: Props) {
                 transition={projectImageMotionTransition}
                 whileInView={projectImageMotionWhileInView}
                 viewport={projectImageMotionViewport}
-                className="md:w-80 w-40 md:h-52 h-28"
+                className="rounded-lg border-2 border-primary md:w-72 w-36 md:h-48 h-24"
                 src={urlFor(project.desktopImage).url()}
                 alt="project"
               />
@@ -59,8 +59,8 @@ export default function Projects({ projects }: Props) {
                 transition={projectImageMotionTransition}
                 whileInView={projectImageMotionWhileInView}
                 viewport={projectImageMotionViewport}
-                className="md:max-w-none max-w-8 md:h-44 h-20"
-                src={urlFor(project.mobileImage).url()}
+                className="absolute z-20 md:-right-8 -right-6 -bottom-3 rounded-lg border-2 border-primary md:h-36 h-20"
+                src={urlFor(project.tabletImage).url()}
                 alt="project"
               />
             </div>
@@ -76,7 +76,7 @@ export default function Projects({ projects }: Props) {
                   className="group relative underline decoration-secondary"
                 >
                   {project.title}
-                  <ArrowTopRightOnSquareIcon className="absolute top-1 opacity-0 group-hover:opacity-100 -right-1 translate-x-full md:w-5 md:h-5 w-3 h-3 text-primary" />
+                  <ArrowTopRightOnSquareIcon className="absolute top-1 opacity-0 group-hover:opacity-100 -right-1 translate-x-full md:w-5 md:h-5 w-3 h-3 text-primary transition-opacity" />
                 </Link>
               </div>
               <div className="flex items-center gap-2 flex-wrap justify-center w-2/3 mx-auto">
