@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
-import { EnvelopeIcon } from "@heroicons/react/20/solid";
+import { DocumentArrowDownIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 import {
   getInTouchMotionAnimate,
   getInTouchMotionInitial,
@@ -43,12 +43,27 @@ export default function Header({ socials }: Props) {
         initial={getInTouchMotionInitial}
         animate={getInTouchMotionAnimate}
         transition={getInTouchMotionTransition}
+        className="flex items-center sm:gap-x-3 gap-x-0"
       >
-        <Link href="#contact" className="group flex items-center">
-          <div className="rounded-full sm:w-10 sm:h-10 h-8 w-8 flex items-center justify-center transition-all group-hover:border-secondary border border-transparent">
-            <EnvelopeIcon className="w-5 h-5" />
+        <Link
+          href={"Kolya-s-CV.pdf"}
+          target="_blank"
+          rel="noopener noreferrer"
+          download
+          className="group flex items-center"
+        >
+          <div className="rounded-full h-8 w-8 flex items-center justify-center transition-all group-hover:border-secondary border border-transparent">
+            <DocumentArrowDownIcon className="sm:w-5 sm:h-5 w-4 h-4" />
           </div>
-          <p className="hidden md:inline-flex tracking-widest text-sm group-hover:border-b-secondary border-b border-b-transparent transition-all">
+          <p className="hidden sm:inline-flex tracking-widest text-sm group-hover:border-b-secondary border-b border-b-transparent transition-all">
+            Get my CV
+          </p>
+        </Link>
+        <Link href="#contact" className="group flex items-center">
+          <div className="rounded-full h-8 w-8 flex items-center justify-center transition-all group-hover:border-secondary border border-transparent">
+            <EnvelopeIcon className="sm:w-5 sm:h-5 w-4 h-4" />
+          </div>
+          <p className="hidden sm:inline-flex tracking-widest text-sm group-hover:border-b-secondary border-b border-b-transparent transition-all">
             Get in touch
           </p>
         </Link>
