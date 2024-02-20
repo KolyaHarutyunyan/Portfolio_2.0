@@ -42,6 +42,7 @@ export type TExperience = TSanityBody & {
   dateEnded: Date;
   isCurrentlyWorkingHere: boolean;
   jobTitle: string;
+  url: string;
   points: string[];
   technologies: ISkill[];
 };

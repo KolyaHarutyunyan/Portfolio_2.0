@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { ArrowTopRightOnSquareIcon } from "@heroicons/react/20/solid";
 import {
   experienceCardMotionInitial,
   experienceCardMotionTransition,
@@ -13,7 +14,16 @@ type Props = { experience: TExperience };
 
 export default function ExperienceCard({ experience }: Props) {
   return (
-    <article className="flex flex-col rounded-lg justify-between items-center space-y-7 flex-shrink-0 h-[550px] w-full sm:w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-[#fef8f0] bg-opacity-50 cursor-pointer overflow-hidden lg:p-10 p-5">
+    <a
+      href={experience.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group relative flex flex-col rounded-lg justify-between items-center space-y-7 flex-shrink-0 h-[550px] w-full sm:w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-[#fef8f0] bg-opacity-50 cursor-pointer overflow-hidden lg:p-10 p-5"
+    >
+      <div className="border-b border-b-transparent transition-all group-hover:border-b-secondary absolute sm:top-3 sm:right-5 top-2 right-3 flex items-center sm:gap-x-2 gap-x-1">
+        <ArrowTopRightOnSquareIcon className="sm:w-5 sm:h-5 w-4 h-4 text-primary" />
+        <span className="sm:text-[16px] text-sm">Visit</span>
+      </div>
       <div className="flex lg:flex-row flex-col-reverse items-center lg:items-start gap-3 justify-between">
         <div className="w-full flex flex-col items-center lg:items-start">
           <h4 className="md:text-2xl lg:text-3xl text-xl font-light">
@@ -54,6 +64,6 @@ export default function ExperienceCard({ experience }: Props) {
           <li key={point}>{point}</li>
         ))}
       </ul>
-    </article>
+    </a>
   );
 }
