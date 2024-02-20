@@ -24,14 +24,14 @@ export default function Projects({ projects }: Props) {
       transition={wrapperMotionTransition}
       className="relative flex flex-col items-center justify-evenly h-screen mx-auto text-left md:flex-row z-0 max-w-[1240px]"
     >
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-2xl">
+      <h3 className="absolute top-24 uppercase tracking-[10px] md:tracking-[20px] md:text-2xl text-xl">
         Projects
       </h3>
       <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-10 pt-40 scrollbar scrollbar-track-[#ccc2b3] scrollbar-thumb-[#f6cc89]">
         {projects.map((project, i) => (
           <div
             key={project._id}
-            className="flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center w-full"
+            className="flex-shrink-0 snap-center flex flex-col md:space-y-5 space-y-3 items-center justify-start w-full"
           >
             <div className="flex items-end gap-x-2">
               <motion.img
@@ -39,7 +39,7 @@ export default function Projects({ projects }: Props) {
                 transition={projectImageMotionTransition}
                 whileInView={projectImageMotionWhileInView}
                 viewport={projectImageMotionViewport}
-                className="h-48"
+                className="md:max-w-none max-w-11 md:h-48 h-24"
                 src={urlFor(project.tabletImage).url()}
                 alt="project"
               />
@@ -48,7 +48,7 @@ export default function Projects({ projects }: Props) {
                 transition={projectImageMotionTransition}
                 whileInView={projectImageMotionWhileInView}
                 viewport={projectImageMotionViewport}
-                className="w-80 h-52"
+                className="md:w-80 w-40 md:h-52 h-28"
                 src={urlFor(project.desktopImage).url()}
                 alt="project"
               />
@@ -57,13 +57,13 @@ export default function Projects({ projects }: Props) {
                 transition={projectImageMotionTransition}
                 whileInView={projectImageMotionWhileInView}
                 viewport={projectImageMotionViewport}
-                className="h-44"
+                className="md:max-w-none max-w-8 md:h-44 h-20"
                 src={urlFor(project.mobileImage).url()}
                 alt="project"
               />
             </div>
-            <div className="space-y-5 px-0 md:px-10 max-w-6xl">
-              <h4 className="text-4xl font-medium text-center">
+            <div className="md:space-y-5 space-y-3 px-0 md:px-10 max-w-6xl">
+              <h4 className="md:text-4xl text-lg font-medium text-center">
                 <span className="underline decoration-secondary">
                   Case study {i + 1} of {projects.length}:
                 </span>{" "}
@@ -75,13 +75,13 @@ export default function Projects({ projects }: Props) {
                     key={technology._id}
                     src={urlFor(technology.image).url()}
                     alt="project-technology"
-                    className="h-10 w-10 rounded-full object-contain object-center"
+                    className="md:h-10 md:w-10 w-6 h-6 rounded-full object-contain object-center"
                     width={40}
                     height={40}
                   />
                 ))}
               </div>
-              <p className="text-sm text-center max-w-2xl mx-auto">
+              <p className="md:text-sm text-xs text-center max-w-md px-4 md:max-w-2xl mx-auto">
                 {project.summary}
               </p>
             </div>

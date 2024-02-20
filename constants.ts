@@ -94,7 +94,7 @@ export const skillImageMotionWhileInView = {
 };
 
 export const projectImageMotionInitial = {
-  y: -300,
+  y: -200,
   opacity: 0,
 };
 export const projectImageMotionTransition = {

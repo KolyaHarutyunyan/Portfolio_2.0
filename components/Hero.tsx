@@ -47,13 +47,13 @@ export default function Hero({ pageInfo }: Props) {
         <div className="absolute border border-secondary rounded-full opacity-20 w-[650px] h-[650px] mt-52 animate-pulse" />
         <div className="absolute border border-primary opacity-20 rounded-full w-[800px] h-[800px] mt-52" />
       </motion.div>
-      <div className="w-[145px] h-[145px] top-24 rounded-full overflow-hidden relative mx-auto">
+      <div className="w-36 h-36 top-24 rounded-full overflow-hidden relative mx-auto">
         <Image
-          className="absolute left-1/2 -translate-x-1/2 object-cover object-center w-[145px] h-[145px]"
+          className="absolute left-1/2 -translate-x-1/2 object-cover object-center w-36 h-36"
           src={urlFor(pageInfo?.heroImage).url()}
           alt="hero"
-          width={145}
-          height={145}
+          width={144}
+          height={144}
           priority
         />
       </div>
