@@ -22,7 +22,7 @@ export default async function Home() {
   const projects = await getProjects();
 
   return (
-    <main className="h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 custom-scrollbar">
+    <main className="h-[100svh] snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 custom-scrollbar">
       <Header socials={socials} />
       <section id="hero" className="snap-center">
         <Hero pageInfo={pageInfo} />
