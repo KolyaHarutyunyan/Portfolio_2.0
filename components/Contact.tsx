@@ -38,7 +38,7 @@ export default function Contact({ pageInfo }: Props) {
       transition={wrapperMotionTransition}
       className="relative h-screen flex flex-col text-center md:text-left md:flex-row max-w-7xl px-2 sm:px-4 justify-evenly mx-auto items-center"
     >
-      <h3 className="absolute top-24 uppercase tracking-[10px] md:tracking-[20px] md:text-2xl text-xl">
+      <h3 className="absolute sm:top-24 top-16 uppercase tracking-[10px] md:tracking-[20px] md:text-2xl text-xl">
         Contact
       </h3>
       <div className="flex flex-col items-center md:space-y-10 space-y-5 pt-24">

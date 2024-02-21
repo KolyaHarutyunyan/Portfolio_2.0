@@ -19,7 +19,7 @@ export default function Skills({ skills }: Props) {
       transition={wrapperMotionTransition}
       className="relative min-h-screen flex flex-col text-center md:text-left xl:flex-row max-w-7xl xl:px-10 justify-center xl:space-y-0 mx-auto items-center pt-40"
     >
-      <h3 className="absolute top-24 uppercase tracking-[10px] md:tracking-[20px] md:text-2xl text-xl">
+      <h3 className="absolute sm:top-24 top-16 uppercase tracking-[10px] md:tracking-[20px] md:text-2xl text-xl">
         Skills
       </h3>
       <h4 className="absolute top-36 tracking-[3px] sm:text-sm text-xs opacity-60">

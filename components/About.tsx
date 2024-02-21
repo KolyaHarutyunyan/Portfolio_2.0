@@ -23,7 +23,7 @@ export default function About({ pageInfo }: Props) {
       transition={wrapperMotionTransition}
       className="relative min-h-screen flex flex-col text-center lg:text-left lg:flex-row mx-auto items-center justify-evenly max-w-7xl px-10 pt-40 overflow-scroll"
     >
-      <h3 className="absolute top-24 uppercase tracking-[10px] md:tracking-[20px] md:text-2xl text-xl">
+      <h3 className="absolute sm:top-24 top-16 uppercase tracking-[10px] md:tracking-[20px] md:text-2xl text-xl">
         About
       </h3>
       <motion.img
