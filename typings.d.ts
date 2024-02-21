@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+
 type TSanityBody = {
   _createdAt: string;
   _id: string;
@@ -64,4 +66,11 @@ export type TProject = TSanityBody & {
   summary: string;
   linkToBuild: string;
   technologies: ISkill[];
+};
+
+export type TSiteConfig = Metadata & {
+  name: string;
+  description: string;
+  url: string;
+  ogImage: string;
 };
