@@ -7,7 +7,7 @@ type Props = { pageInfo: TPageInfo };
 
 export default function Footer({ pageInfo }: Props) {
   return (
-    <footer className="sticky bottom-3 w-full">
+    <footer className="sticky bottom-3 w-full z-50">
       <Link
         href="#hero"
         className="group flex justify-center items-center rounded-full sm:w-[60px] sm:h-[60px] w-[52px] h-[52px] hover:border-secondary border border-transparent mx-auto transition-all"
