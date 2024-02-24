@@ -18,8 +18,8 @@ import {
 } from "../api";
 
 export const metadata: Metadata = metaSocialGenerator({
-  title: siteConfig.name,
-  desc: siteConfig.description,
+  title: "Kolya's Portfolio",
+  desc: "I have got just what you need. Let's build the future together!",
 });
 
 export default async function Home() {
