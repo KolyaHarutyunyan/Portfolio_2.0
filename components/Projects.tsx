@@ -24,7 +24,7 @@ export default function Projects({ projects }: Props) {
       initial={wrapperMotionInitial}
       whileInView={wrapperMotionWhileInView}
       transition={wrapperMotionTransition}
-      className="relative flex flex-col items-center justify-evenly h-screen mx-auto text-left md:flex-row z-0 max-w-[1240px] cursor-default"
+      className="relative flex flex-col items-center justify-evenly h-screen mx-auto text-left md:flex-row z-0 max-w-7xl cursor-default"
     >
       <h3 className="absolute sm:top-24 top-16 uppercase tracking-[10px] md:tracking-[20px] md:text-2xl text-xl">
         Projects
