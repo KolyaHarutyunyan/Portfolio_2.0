@@ -1,99 +1,63 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import { Inter } from "next/font/google";
-// import { PublicLinks, siteConfig } from "@/configs/site";
+import { siteConfig } from "@/configs/site";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
-// const host = PublicLinks.ROOT;
-
-// export const metadata: Metadata = {
-//   metadataBase: new URL(host),
-//   title: {
-//     default: siteConfig.name,
-//     template: `%s | ${siteConfig.name}`,
-//   },
-//   robots: {
-//     index: true,
-//     follow: true,
-//     "max-snippet": -1,
-//     "max-image-preview": "large",
-//     "max-video-preview": -1,
-//   },
-//   description: siteConfig.description,
-//   keywords: siteConfig.keywords,
-//   openGraph: {
-//     type: "website",
-//     locale: "en_US",
-//     images: siteConfig.ogImage,
-//     url: siteConfig.url,
-//     title: siteConfig.name,
-//     description: siteConfig.description,
-//     siteName: siteConfig.name,
-//   },
-//   twitter: {
-//     images: siteConfig.twitter?.images,
-//     card: "summary_large_image",
-//     creator: "@KolyaHarutyunyan",
-//     site: "@kolyasportfoliocom",
-//     title: siteConfig.name,
-//     description: siteConfig.description,
-//   },
-//   icons: {
-//     icon: "/favicon.ico",
-//     shortcut: "/favicon-16x16.png",
-//     apple: "/apple-touch-icon.png",
-//   },
-//   manifest: `${siteConfig.url}/site.webmanifest`,
-// };
+const host = siteConfig.url;
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://kolya-s-portfolio.com/"),
+  metadataBase: new URL(host),
   title: {
-    default: "Kolya's Portfolio",
-    template: `%s | "Kolya's Portfolio"`,
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
   },
-  description:
-    "I have got just what you need. Let's build the future together!",
+  robots: {
+    index: true,
+    follow: true,
+    "max-snippet": -1,
+    "max-image-preview": "large",
+    "max-video-preview": -1,
+  },
+  viewport: "width=device-width, initial-scale=1, maximum-scale=1",
+  description: siteConfig.description,
+  keywords: siteConfig.keywords,
+  alternates: {
+    canonical: "./",
+    types: {
+      "application/rss+xml": `${siteConfig.url}/feed.xml`,
+    },
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
-    images: "/images/social/og.png",
-    url: "https://kolya-s-portfolio.com/",
-    title: "Kolya's Portfolio",
-    description:
-      "I have got just what you need. Let's build the future together!",
-    siteName: "Kolya's Portfolio",
+    images: siteConfig.ogImage,
+    url: siteConfig.url,
+    title: siteConfig.name,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
   },
   twitter: {
-    images: "/images/social/og.png",
+    images: siteConfig.twitter.images,
     card: "summary_large_image",
-    creator: "@KolyaHarutyunyan",
-    site: "@kolyasportfoliocom",
-    title: "Kolya's Portfolio",
-    description:
-      "I have got just what you need. Let's build the future together!",
+    creator: siteConfig.twitter.creator,
+    site: siteConfig.twitter.site,
+    title: siteConfig.name,
+    description: siteConfig.description,
   },
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon-16x16.png",
     apple: "/apple-touch-icon.png",
   },
-  manifest: `https://kolya-s-portfolio.com/site.webmanifest`,
+  manifest: `${siteConfig.url}/site.webmanifest`,
 };
 
-// export const metadata: Metadata = {
-//   title: "Kolya's Portfolio",
-//   description:
-//     "I have got just what you need. Let's build the future together!",
-// };
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={siteConfig.language} suppressHydrationWarning>
+      <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <body className={inter.className}>{children}</body>
     </html>
   );

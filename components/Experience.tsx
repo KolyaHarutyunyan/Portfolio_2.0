@@ -17,7 +17,7 @@ export default function Experience({ experiences }: Props) {
       initial={wrapperMotionInitial}
       whileInView={wrapperMotionWhileInView}
       transition={wrapperMotionTransition}
-      className="relative h-screen flex flex-col md:flex-row max-w-7xl px-2 sm:px-4 justify-evenly mx-auto text-left overflow-hidden items-center pt-40"
+      className="relative h-screen flex flex-col md:flex-row max-w-7xl justify-evenly mx-auto text-left overflow-hidden items-center pt-40"
     >
       <h3 className="absolute sm:top-24 top-16 uppercase tracking-[10px] md:tracking-[20px] md:text-2xl text-xl">
         Experience

@@ -1,3 +1,6 @@
+import type { Metadata } from "next";
+import { metaSocialGenerator } from "@/utils";
+import { siteConfig } from "@/configs/site";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Experience from "@/components/Experience";
@@ -13,6 +16,11 @@ import {
   getSkills,
   getSocials,
 } from "../api";
+
+export const metadata: Metadata = metaSocialGenerator({
+  title: siteConfig.name,
+  desc: siteConfig.description,
+});
 
 export default async function Home() {
   const socials = await getSocials();

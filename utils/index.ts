@@ -1,0 +1,1 @@
+export { metaSocialGenerator } from "./metaSocialGenerator";

@@ -1,10 +1,10 @@
+import site from "../collections/site.json" assert { type: "json" };
 import { TSiteConfig } from "@/typings";
 
 export const siteConfig: TSiteConfig = {
-  name: "Kolya's Portfolio",
-  description:
-    "I have got just what you need. Let's build the future together!",
-  url: "https://kolya-s-portfolio.com/",
+  name: site.name,
+  description: site.description,
+  language: site.language,
   keywords: [
     "Portfolio",
     "CV",
@@ -25,12 +25,13 @@ export const siteConfig: TSiteConfig = {
     "Customer experience",
   ],
   ogImage: "/images/social/og.png",
+  email: site.email,
+  url: process.env.HOST ?? site.urlOrigin,
   twitter: {
     card: "summary_large_image",
     images: "/images/social/og.png",
+    creator: "@_kolya-s-portfolio",
+    site: "@_kolya-s-portfolio",
+    description: site.description,
   },
 };
-
-export const enum PublicLinks {
-  ROOT = "https://kolya-s-portfolio.com/",
-}
