@@ -86,7 +86,7 @@ export default function Projects({ projects }: Props) {
                       key={technology._id}
                       src={urlFor(technology.image).url()}
                       alt="project-technology"
-                      className="md:h-10 md:w-10 w-6 h-6 rounded-full object-contain object-center"
+                      className="md:h-10 md:w-10 w-6 h-6 rounded-full object-contain object-center bg-[#fef8f0]"
                       width={40}
                       height={40}
                     />
