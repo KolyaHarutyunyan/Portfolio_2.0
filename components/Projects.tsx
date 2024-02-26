@@ -36,7 +36,12 @@ export default function Projects({ projects }: Props) {
               key={project._id}
               className="relative flex-shrink-0 snap-center flex flex-col md:space-y-5 space-y-3 items-center justify-start w-full"
             >
-              <div className="relative flex items-end gap-x-2">
+              <Link
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative flex items-end gap-x-2"
+              >
                 <motion.img
                   initial={projectImageMotionInitial}
                   transition={projectImageMotionTransition}
@@ -64,21 +69,25 @@ export default function Projects({ projects }: Props) {
                   src={urlFor(project.tabletImage).url()}
                   alt="project"
                 />
-              </div>
+                <ArrowTopRightOnSquareIcon className="absolute md:-top-2 -top-1 -right-7 opacity-0 group-hover:opacity-100 md:-right-10 translate-x-full md:w-7 md:h-7 w-4 h-4 text-primary transition-all animate-pulse group-hover:animate-none" />
+              </Link>
               <div className="md:space-y-5 space-y-3 px-0 md:px-10 max-w-6xl">
                 <div className="flex w-max items-center md:gap-x-2.5 gap-x-1 mx-auto md:text-4xl text-lg font-medium text-center">
                   <h4 className="">
                     Case study {i + 1} of {projects.length}:
                   </h4>{" "}
-                  <Link
+                  {/* <Link
                     href={project.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group relative underline decoration-secondary"
                   >
                     {project.title}
-                    <ArrowTopRightOnSquareIcon className="absolute top-1 opacity-0 group-hover:opacity-100 -right-1 translate-x-full md:w-5 md:h-5 w-3 h-3 text-primary transition-opacity" />
-                  </Link>
+                    <ArrowTopRightOnSquareIcon className="absolute top-1 opacity-0 group-hover:opacity-100 -right-1 translate-x-full md:w-5 md:h-5 w-3 h-3 text-primary transition-all animate-pulse group-hover:animate-none" />
+                  </Link> */}
+                  <h3 className="underline decoration-secondary">
+                    {project.title}
+                  </h3>
                 </div>
                 <div className="flex items-center gap-2 flex-wrap justify-center w-2/3 mx-auto">
                   {project.technologies.map((technology) => (
